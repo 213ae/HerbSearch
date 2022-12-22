@@ -1,0 +1,125 @@
+.context-container {
+    position: relative;
+    height: 100%;
+
+    .title h3 {
+        height: 30px;
+        text-align: center;
+        font-size: 20px;
+        color: green;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .left-nav {
+        float: left;
+        width: 140px;
+        height: calc(100% - 30px);
+
+        .ant-anchor-wrapper {
+            height: 100%;
+            overflow: auto;
+
+
+            .ant-anchor {
+                padding: 0px;
+
+                .ant-anchor-ink:before {
+                    display: none;
+                }
+
+                .ant-anchor-link {
+                    padding: 5px 0 5px 0px;
+
+                    a {
+                        text-align: center;
+                        font-size: 16px;
+                    }
+                }
+
+                .ant-anchor-link-active {
+                    position: relative;
+                    background-color: rgba(0, 0, 0, 0.06);
+
+                    &::before {
+                        position: absolute;
+                        left: 15px;
+                        top: 6px;
+                        color: green;
+                        content: '>';
+                    }
+
+                    &::after {
+                        position: absolute;
+                        right: 15px;
+                        top: 6px;
+                        color: green;
+                        content: '<';
+                    }
+                }
+            }
+
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: rgba(128, 128, 128, 0.2);
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: rgba(0, 0, 0, 0.2);
+                border-radius: 5px;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background: rgba(0, 0, 0, 0.3);
+            }
+        }
+
+    }
+
+    .right-context {
+        * {
+            user-select: text;
+        }
+
+        padding: 0 30px;
+        height: calc(100% - 30px);
+        overflow: auto;
+        border-left: 2px solid rgb(0, 0, 0, .1);
+
+        h4 {
+            color: green;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        #similars {
+            a {
+                font-size: 16px;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: rgba(128, 128, 128, 0.2);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.3);
+        }
+    }
+}

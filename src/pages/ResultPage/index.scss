@@ -1,0 +1,95 @@
+.result-list {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+
+    .list {
+        height: calc(100% - 44px);
+        padding: 0 20px;
+        border: 1px solid rgba(0, 0, 0, .1);
+        overflow: auto;
+
+        .list-item {
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+            }
+
+            .left-text {
+                width: calc(100% - 160px);
+                height: 130px;
+                padding-right: 20px;
+            }
+
+            em {
+                color: #008000 !important;
+                font-style: normal;
+            }
+
+            h2 {
+                margin-bottom: 0px;
+            }
+
+            li {
+                color: rgb(97, 87, 87);
+                width: 100%;
+                margin-top: 5px;
+
+                &.xingwei {
+                    height: 23px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                &.gongxiao {
+                    -webkit-line-clamp: 3;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical; 
+                    text-overflow: ellipsis;
+                    word-break: break-all;
+                    overflow: hidden;
+                }
+            }
+
+            .pic {
+                float: right;
+                height: 120px;
+                width: 160px;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: rgba(128, 128, 128, 0.2);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    .pager {
+        position: absolute;
+        margin-top: 10px;
+        right: 30px;
+
+        li,
+        button,
+        .ant-select-selector {
+            border-radius: 10px;
+        }
+    }
+}

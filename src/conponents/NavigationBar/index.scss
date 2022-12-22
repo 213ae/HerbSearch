@@ -1,0 +1,31 @@
+@mixin nav-style($nav-height) {
+    .navigate-bar {
+        position: relative;
+        height: $nav-height;
+        margin-bottom: 0px;
+        top: -$nav-height;
+        transition: all 1s;
+        background-color: rgba(0, 0, 0, 0);
+        opacity: 0;
+
+        &.active {
+            transition: all 1s;
+            top: 0px;
+            background-color: rgba(255, 255, 255, 0.5);
+            opacity: 1;
+        }
+
+        button {
+            transition: all 1s;
+            height: $nav-height;
+            width: calc(2 * $nav-height);
+            font-size: calc(($nav-height / 2) - 2px);
+        }
+    }
+}
+
+@include nav-style(32px);
+
+@media screen and (max-width: 992px) {
+    @include nav-style(32px)
+}

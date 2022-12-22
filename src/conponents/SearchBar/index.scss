@@ -1,0 +1,209 @@
+.search-bar {
+    width: 630px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    transition: all 1s;
+    margin-top: calc(40vh - 100px);
+
+    &.active {
+        transition: all 1s;
+        margin-top: -32px;
+    }
+
+    .logo {
+        display: block;
+        position: relative;
+        margin: 0 auto;
+
+        transition: all 1s;
+        height: 90px;
+        width: 430px;
+        background: url('logo.png') no-repeat -20px top;
+        background-size: cover;
+    }
+
+    &.active .logo {
+        transition: all 1s;
+        height: 32px;
+        width: 150px;
+        background: url('logo.png') no-repeat -9px top;
+        background-size: cover;
+    }
+
+    .input-area {
+        position: relative;
+        padding: 0px 5px;
+
+        .tag-container {
+            height: 22px;
+            width: 540px;
+            padding-left: 20px;
+            padding-top: 2px;
+            overflow: auto;
+
+            &::-webkit-scrollbar {
+                width: 10px !important
+            }
+
+            .tag {
+                float: left;
+                font-size: 10px;
+                background-color: rgba(255, 255, 255, 0.9);
+                border-radius: 11px;
+                padding: 0 5px;
+                margin-right: 2px;
+                margin-bottom: 1px;
+                margin-top: 1px;
+
+                .close-button {
+                    font-size: 11px;
+                    margin-left: 1px;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: red;
+                    }
+                }
+            }
+        }
+
+        .close-all {
+            position: absolute;
+            top: 5px;
+            right: 85px;
+
+            &:hover {
+                color: red;
+            }
+        }
+
+        input {
+            transition: none;
+            height: 50px;
+            width: 560px;
+            padding-left: 20px;
+            border-radius: 25px;
+
+            &:focus {
+                transition: none;
+                box-shadow: none;
+                border: 0px;
+                border-radius: 0px;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+        }
+
+        .shitu {
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            right: 66px;
+            top: 23px;
+            color: gray;
+            z-index: 3;
+
+            &:hover {
+                color: #008000;
+            }
+
+            span {
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                font-size: 20px;
+            }
+
+            input[type="file"] {
+                position: absolute;
+                font-size: 0;
+                height: 60px;
+                width: 100%;
+                top: -10px;
+                opacity: 0;
+                z-index: 4;
+                cursor: pointer;
+            }
+        }
+
+
+        button {
+            margin-left: 10px;
+            height: 50px !important;
+            width: 50px !important;
+        }
+
+        .autocomplete {
+            position: absolute;
+            width: 560px;
+            height: auto;
+            background-color: #fff;
+            z-index: 3;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            overflow: hidden;
+            margin-top: -7px;
+
+            .divider {
+                pointer-events: none;
+                font-size: 12px;
+                color: gray;
+                // position: absolute;
+                // top: -9px;
+                margin: -3px;
+            }
+
+            .no-data {
+                font-size: 14px;
+                line-height: 40px;
+                height: 40px;
+                color: gray;
+                text-align: center;
+            }
+
+            .autocomplete-item {
+                font-size: 16px;
+                line-height: 40px;
+                height: 40px;
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.1);
+                }
+
+                span {
+                    margin-left: 13px;
+                }
+
+            }
+
+            .hot-search {
+                position: relative;
+
+                .fire-num {
+                    float: right;
+                    margin-right: 13px;
+                }
+            }
+        }
+    }
+
+
+    .advanced {
+        padding-left: 38px;
+        margin-top: 10px;
+
+        label {
+            display: inline-block;
+            vertical-align: bottom;
+            height: 30px;
+            font-size: 16px;
+            line-height: 30px;
+        }
+
+        .select {
+            margin-left: 10px;
+        }
+    }
+}
