@@ -213,7 +213,7 @@ export default function SearchBar(props) {
 
     const autoComplete = () => {
         if (isShow) {
-            if (completeItems.length !== 0 && content !== '') {
+            if (completeItems?.length && content !== '') {
                 return (
                     <div className='autocomplete'>
                         <Divider className='divider' orientation="center" plain>猜你想搜</Divider>
@@ -372,10 +372,12 @@ export default function SearchBar(props) {
                 .then(res => axios.post(`/plant?access_token=${res.data.access_token}`,
                     "image=" + encodeURIComponent(e.target.result.replace('data:image/webp;base64,', '')))
                 ).then(res => {
-                    setContent(res.data.result[0].name);
+                    if (res.data.result[0].name !== '非植物') {
+                        setContent(res.data.result[0].name);
+                        _name.current.input.value = res.data.result[0].name;
+                        handleSearch();
+                    }
                     setLoadingPicture(false)
-                    _name.current.input.value = res.data.result[0].name;
-                    handleSearch();
                 }).catch(err => console.log(err))
         }
     }
